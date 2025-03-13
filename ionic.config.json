@@ -1,0 +1,7 @@
+{
+  "name": "Enigma",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
