@@ -37,5 +37,58 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 
 #main {
-    padding-top: 50px; /* O el valor que desees */
+    padding-top: 50px;
+    /* O el valor que desees */
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Aphra';
+    /* El nombre que se le da a la fuente */
+    src: url('/assets/fonts/font.ttf') format('truetype');
+    /* La ruta del archivo de la fuente */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fuente_titulo {
+    font-family: 'Aphra', sans-serif;
+    //font-size: 1.2rem;
+    font-size: 80px;//tamaño de fuente
+}
+
+.fuente_titulo_primero {
+    font-family: 'Aphra', sans-serif;
+    color: white;
+    /* Aplica un color diferente para "Feathered" */
+}
+
+.fuente_titulo_segundo {
+    font-family: 'Aphra', sans-serif;
+    color: yellow;
+    /* Aplica color amarillo a "Enigma" */
+}
+
+.custom-background {
+    --background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    //color: white;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.story-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 90%;
 }

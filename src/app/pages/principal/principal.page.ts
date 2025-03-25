@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonButton, IonContent, IonicModule, IonIcon } from '@ionic/angular';
+import { info } from 'src/app/interfaces/interfaces';
+import { ConsultasService } from 'src/app/services/consultas.service';
 @Component({
   standalone:false,
   selector: 'app-principal',
@@ -12,23 +14,22 @@ export class PrincipalPage implements OnInit {
 
   @ViewChild(IonContent) content!: IonContent;
 
-  scrollToBottom() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the bottom instead of instantly
-    this.content.scrollToBottom(500);
-  }
-
-  scrollToTop() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the top instead of instantly
-    this.content.scrollToTop(500);
-  }
+  //historias: info[] = [];
 
 
-  constructor() { }
+  constructor(/*private firebaseService: ConsultasService*/) { }
 
   ngOnInit() {
-    
+  
+    // this.firebaseService.getDatos().subscribe({
+    //   next: (data) => {
+    //     console.log('Datos recibidos:', data);
+    //     this.historias = data;
+    //   },
+    //   error: (err) => {
+    //     console.error('Error obteniendo datos:', err);
+    //   }
+    // });
   }
 
 }

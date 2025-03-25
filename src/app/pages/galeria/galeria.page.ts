@@ -1,16 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ConsultasService } from 'src/app/services/consultas.service';
+import { escenarios, info } from '../../interfaces/interfaces';
 @Component({
-  standalone:false,
+  standalone: false,
   selector: 'app-galeria',
   templateUrl: './galeria.page.html',
   styleUrls: ['./galeria.page.scss'],
 })
 export class GaleriaPage implements OnInit {
+  // Arreglo para almacenar los escenarios obtenidos de la base de datos */
+  escenarios: escenarios[] = [];
+  
+  /// Constructor del componente que inyecta los servicios necesarios y controlador que nos ayudara a forzar la detección de cambios
 
-  constructor() { }
+  constructor(private firebaseService: ConsultasService,private cdr:ChangeDetectorRef) { }
+
+  // Realiza una suscripción a los datos  que proporcionados por el servicio segun lo requerido con el getDatosNombreFuncion.
 
   ngOnInit() {
+    this.firebaseService.getDatosEscenarios().subscribe({
+      next: (data) => {
+        console.log('Datos recibidos:', data);
+        this.escenarios = data;
+        this.cdr.detectChanges();// Fuerza la detección de cambios para asegurar que la vista se actualice una vez que se obtienen una respues.
+      },
+      error: (err) => {
+        console.error('Error obteniendo datos:', err);
+      }
+    });
   }
 
 }

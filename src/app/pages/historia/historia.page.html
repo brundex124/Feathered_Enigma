@@ -1,16 +1,18 @@
 <ion-content class="content">
     <h1>....</h1>
-    <div class="story-card">
-      <h3 class="card-titulo">Title</h3>
-      <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis.
+
+    <div class="content-wrapper">
+
+      <p class="fuente_titulo"><!--Logo principal del Juego-->
+        <span class="fuente_titulo_primero">Feathered</span>
+        <br>
+        <span class="fuente_titulo_segundo">Enigma</span>
       </p>
-    </div>
-  
-    <div class="story-card">
-      <h3 class="card-titulo">Title</h3>
-      <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis.
+      
+      <!--Informacion de la historia obtenida de base de datos-->
+      <p class="text"
+      *ngFor="let i of historias">
+        {{i.Texto}}  
       </p>
     </div>
 </ion-content>
