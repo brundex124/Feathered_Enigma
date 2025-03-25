@@ -87,8 +87,33 @@
     padding: 20px;
 }
 
-.story-text {
+.text {
     font-size: 1.2rem;
     line-height: 1.5;
     max-width: 90%;
+    color: white;
 }
+
+
+
+/* Activar el modo oscuro de manera predeterminada */
+body {
+    --background: #121212; /* Color de fondo oscuro */
+    --ion-text-color: #fff; /* Color de texto blanco */
+    --ion-item-background: #2a2a2a; /* Fondo de los items en modo oscuro */
+  }
+  
+  body.dark {
+
+    --ion-toolbar-background: #333;
+    --ion-ion-tab-bar: #333;
+    --ion-ion-tab-bar-background: #188182;
+   
+  }
+
+  ion-tab-bar {
+    --background: #2a2a2a; /* Cambia esto al color que desees */
+    --color-selected: #ffffff; /* Color de texto para la pestaña seleccionada */
+    --color: #b9b1b1; /* Color de texto para las pestañas no seleccionadas */
+  }
+  
