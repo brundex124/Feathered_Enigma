@@ -1,22 +1,18 @@
 <ion-content>
     <h1>.....................</h1>
 
-    <ion-card>
-        <ion-img class="imagen" src="../../../assets/img/galeria_prueba.jpg" alt="Escenario 1"></ion-img>
+    <!--Card con imagen y titulo donde solicita la direccion de la imagen desde la collecion -->
+    <ion-card *ngFor="let i of escenarios">
+        <img [src]="i.foto" />
+        <ion-card-header>
+            <ion-card-title>{{i.Nombre}}</ion-card-title>
+            <ion-card-subtitle>Nivel: {{i.Escenario}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <!-- <ion-card-content>
+            Here's a small text description for the card content. Nothing more, nothing less.
+        </ion-card-content> -->
     </ion-card>
-    
-    <ion-card>
-        <ion-img class="imagen" src="../../../assets/img/galeria_prueba.jpg" alt="Escenario 1"></ion-img>
-    </ion-card>
-    
-    <ion-card>
-        <ion-img class="imagen" src="../../../assets/img/galeria_prueba.jpg" alt="Escenario 1"></ion-img>
-    </ion-card>
-    
-    <ion-card>
-        <ion-img class="imagen" src="../../../assets/img/galeria_prueba.jpg" alt="Escenario 1"></ion-img>
-    </ion-card>
-    
   
   
 
