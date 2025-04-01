@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore'
-import { Personajes, escenarios, info } from '../interfaces/interfaces';
-import { map, Observable } from 'rxjs';
+import { personajes, escenarios, info, reseñas } from '../interfaces/interfaces';
+import { from, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,8 @@ export class ConsultasService {
     */
   private collectionHistoria: AngularFirestoreCollection<info>;
   private collectionEscenarios: AngularFirestoreCollection<escenarios>;
+  private collectionPersonajes: AngularFirestoreCollection<personajes>;
+  private collectionReseñas: AngularFirestoreCollection<reseñas>;
 
   /*
    * Observable que almacena los datos de los escenarios provenientes de la base de datos.  
@@ -21,15 +23,23 @@ export class ConsultasService {
    */
   datosHistoria: Observable<info[]>;
   datosEscenarios: Observable<escenarios[]>;
+  datosPersonajes: Observable<personajes[]>;
+  datosReseñas: Observable<reseñas[]>;
 
 
   constructor(private firestore: AngularFirestore) {
     // Inicializamos las colecciones de Firestore para obtener los datos de las colecciones.
     this.collectionHistoria = this.firestore.collection<info>('Historias');
     this.collectionEscenarios = this.firestore.collection<escenarios>('Escenarios');
+    this.collectionPersonajes = this.firestore.collection<personajes>('Personajes');
+    this.collectionReseñas = this.firestore.collection<reseñas>('Reseñas');
+
     //Almacenamos los datos de las colecciones en las variables para pasar los datos que se usaran el metodo getDatosNombreFuncion .
     this.datosHistoria = this.collectionHistoria.valueChanges();
+    this.datosPersonajes = this.collectionPersonajes.valueChanges();
     this.datosEscenarios = this.collectionEscenarios.valueChanges();
+    this.datosReseñas = this.collectionReseñas.valueChanges();
+
   }
 
 
@@ -41,6 +51,23 @@ export class ConsultasService {
 
   getDatosEscenarios(): Observable<escenarios[]> {
     return this.datosEscenarios;
+  }
+
+  getDatosPersonajes(): Observable<personajes[]> {
+    return this.datosPersonajes;
+  }
+  
+  getDatosReseñas(): Observable<reseñas[]> {
+    return this.datosReseñas;
+  }
+
+  getDetalle(nombre: string): Observable<personajes | undefined> {
+    return from(this.collectionPersonajes.ref.where('Nombre', '==', nombre).get().then(snapshot => {
+      if (!snapshot.empty) {
+        return snapshot.docs[0].data() as personajes;
+      }
+      return undefined;
+    }));
   }
 
 

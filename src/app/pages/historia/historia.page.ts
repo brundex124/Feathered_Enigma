@@ -12,7 +12,7 @@ export class HistoriaPage implements OnInit {
     historias: info[] = [];  // Arreglo para almacenar los escenarios obtenidos de la base de datos */
 
   /// Constructor del componente que inyecta los servicios necesarios y controlador que nos ayudara a forzar la detección de cambios
-  constructor(private firebaseService: ConsultasService,private cdr: ChangeDetectorRef) { }
+  constructor(private firebaseService: ConsultasService,private cdr: ChangeDetectorRef) { } 
 
   // Realiza una suscripción a los datos  que proporcionados por el servicio segun lo requerido con el getDatosNombreFuncion.
   ngOnInit() {

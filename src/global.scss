@@ -37,83 +37,168 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 
 #main {
-    padding-top: 50px;
-    /* O el valor que desees */
+  padding-top: 50px;
+  /* O el valor que desees */
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @font-face {
-    font-family: 'Aphra';
-    /* El nombre que se le da a la fuente */
-    src: url('/assets/fonts/font.ttf') format('truetype');
-    /* La ruta del archivo de la fuente */
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Aphra';
+  /* El nombre que se le da a la fuente */
+  src: url('/assets/fonts/font.ttf') format('truetype');
+  /* La ruta del archivo de la fuente */
+  font-weight: normal;
+  font-style: normal;
 }
 
 .fuente_titulo {
-    font-family: 'Aphra', sans-serif;
-    //font-size: 1.2rem;
-    font-size: 80px;//tamaño de fuente
+  font-family: 'Aphra', sans-serif;
+  //font-size: 1.2rem;
+  font-size: 80px; //tamaño de fuente
 }
 
 .fuente_titulo_primero {
-    font-family: 'Aphra', sans-serif;
-    color: white;
-    /* Aplica un color diferente para "Feathered" */
+  font-family: 'Aphra', sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  text-shadow: 
+      5px 5px 0px #444, 
+      10px 10px 0px #222, 
+      15px 15px 0px black;
 }
 
 .fuente_titulo_segundo {
-    font-family: 'Aphra', sans-serif;
-    color: yellow;
-    /* Aplica color amarillo a "Enigma" */
+  font-family: 'Aphra', sans-serif;
+  color: gold;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow:
+    5px 5px 0px #aa8800,
+    10px 10px 0px #776600,
+    15px 15px 0px #443300;
 }
 
+
+.personaje-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  /* Espacio entre tarjetas */
+  border-radius: 12px;
+  /* Bordes suaves */
+}
+
+
+.personaje-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Espaciado uniforme */
+}
+
+.personaje-thumbnail {
+  min-width: 110px;
+  min-height: 110px;
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  /* Bordes suaves */
+  overflow: hidden;
+  /* Evita que la imagen sobresalga */
+}
+
+.img_personajes {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Asegura que la imagen se ajuste bien */
+}
+
+
+.nombre-personaje {
+  color: #fff;
+
+}
+
+// Animación para una mejor entrada visual
+.card-animate {
+  opacity: 0;
+  animation: fadeIn 0.9s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.descripcion-personaje {
+  font-size: 1.1em;
+  margin-top: 4px;
+  opacity: 0.85;
+  font-style: italic;
+  /* Da un toque más estilizado */
+}
+
+
+
 .custom-background {
-    --background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    //color: white;
+  --background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  //color: white;
 }
 
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 .text {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    max-width: 90%;
-    color: white;
+  font-family: 'Oswald', sans-serif;
+
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 90%;
+  color: white;
 }
 
 
 
 /* Activar el modo oscuro de manera predeterminada */
 body {
-    --background: #121212; /* Color de fondo oscuro */
-    --ion-text-color: #fff; /* Color de texto blanco */
-    --ion-item-background: #2a2a2a; /* Fondo de los items en modo oscuro */
-  }
-  
-  body.dark {
+  --background: #121212;
+  /* Color de fondo oscuro */
+  --ion-text-color: #fff;
+  /* Color de texto blanco */
+  --ion-item-background: #2a2a2a;
+  /* Fondo de los items en modo oscuro */
+}
 
-    --ion-toolbar-background: #333;
-    --ion-ion-tab-bar: #333;
-    --ion-ion-tab-bar-background: #188182;
-   
-  }
+body.dark {
 
-  ion-tab-bar {
-    --background: #2a2a2a; /* Cambia esto al color que desees */
-    --color-selected: #ffffff; /* Color de texto para la pestaña seleccionada */
-    --color: #b9b1b1; /* Color de texto para las pestañas no seleccionadas */
-  }
-  
+  --ion-toolbar-background: #333;
+  --ion-ion-tab-bar: #333;
+  --ion-ion-tab-bar-background: #188182;
+
+}
+
+ion-tab-bar {
+  --background: #2a2a2a;
+  /* Cambia esto al color que desees */
+  --color-selected: #ffffff;
+  /* Color de texto para la pestaña seleccionada */
+  --color: #b9b1b1;
+  /* Color de texto para las pestañas no seleccionadas */
+}

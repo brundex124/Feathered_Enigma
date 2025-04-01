@@ -1,0 +1,54 @@
+<ion-content class="custom-background">
+
+  <div class="titulo-contenedor">
+    <h1 class="titulo">{{ detallePersonaje.Nombre }}</h1>
+  </div>
+
+  <!-- Imagen del personaje -->
+  <div class="imagen-contenedor">
+    <img class="imagen" *ngIf="detallePersonaje.Foto" [src]="detallePersonaje.Foto" alt="Imagen del personaje">
+  </div>
+
+  <!-- Ficha de detalles -->
+  <ion-card class="detalle-card">
+    <ion-card-header>
+      <ion-card-subtitle>Información General</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label><strong>Rol:</strong></ion-label>
+        <ion-note slot="end" color="primary">{{ detallePersonaje.Personaje }}</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <div class="vidas">
+          <ion-label><strong>Vida:</strong></ion-label>
+          <ng-container *ngIf="detallePersonaje.Vida > 0 && detallePersonaje.Personaje === 'Milos'">
+            <img *ngFor="let _ of [].constructor(detallePersonaje.Vida); let i = index" 
+                 src="../../../assets/img/corazon.png" 
+                 class="corazon">
+          </ng-container>
+          
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><strong>Descripcion:</strong></ion-label>
+        <ion-note slot="end" color="warning">{{ detallePersonaje.Descripcion }}</ion-note>
+      </ion-item>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón de regreso -->
+  <ion-footer no-border>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="regresar()" color="danger">
+          <ion-icon slot="start" name="arrow-back"></ion-icon>
+          Regresar
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

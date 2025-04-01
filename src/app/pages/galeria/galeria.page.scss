@@ -1,26 +1,18 @@
 
-
-  .fondo-personalizado {
-    --background: black;
-    color: white;
-  }
-
-  .titulo-seccion {
+  .titulo {
     font-size: 1.5rem;
-    font-weight: bold;
     padding: 10px 15px;
+    color: white;
+
   }
 
-  .contenedor-imagen {
-    background: #3a3a3a;
+  .card_imagen {
     border-radius: 12px;
-    padding: 10px;
     margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 
   .imagen {
-    width: 100%;
-    border-radius: 70px;
+    border-radius: 20px;
   }
 

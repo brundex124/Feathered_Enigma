@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'personajes',
     loadChildren: () => import('./pages/personajes/personajes.module').then( m => m.PersonajesPageModule)
   },
+ 
+  {
+    path: 'colaboradores',
+    loadChildren: () => import('./pages/colaboradores/colaboradores.module').then( m => m.ColaboradoresPageModule)
+  },
 ];
 
 @NgModule({

@@ -44,6 +44,13 @@ export class NavBarComponent  implements OnInit {
       tab:'personajes'
 
     },
+    {
+      icono: 'people',
+      nombre: 'Colaboradores',
+      ruta:'/colaboradores',
+      tab:'colaboradores'
+
+    },
   ];
   constructor() { }
 

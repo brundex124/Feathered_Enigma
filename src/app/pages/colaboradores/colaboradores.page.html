@@ -1,0 +1,18 @@
+<ion-content class="custom-background">
+  <h1>.....................</h1>
+
+  <ion-card-content>
+    <ion-card class="personaje-item card-animate" *ngFor="let i of colaboradores" >
+      <div class="personaje-contenedor">
+        <ion-thumbnail class="personaje-thumbnail">
+          <img class="img_personajes"  [src]="i.foto" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2 class="nombre-personaje">{{ i.nombre }}</h2>
+          <h4 class="descripcion-personaje">{{ i.rol }}</h4>
+        </ion-label>
+      </div>
+    </ion-card>
+  </ion-card-content>
+
+</ion-content>

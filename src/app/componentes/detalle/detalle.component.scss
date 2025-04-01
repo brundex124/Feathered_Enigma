@@ -1,0 +1,60 @@
+/* styles.css */
+
+  
+  ion-content {
+    background-color: var(--ion-background-color);
+    color: white;
+  }
+  
+  .personaje-card {
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: #222;
+    color: white;
+  }
+  
+  
+  .imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .etiqueta {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .valor {
+    font-size: 1.2em;
+    color: var(--ion-color-primary);
+  }
+  
+  .descripcion-card {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    background: #222;
+    color: white;
+  }
+  
+  .vida {
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+  
+  .corazon {
+    height: 60px;
+    width: auto;
+  }
+  
+  .custom-footer {
+    background: var(--ion-toolbar-background);
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .boton-regresar {
+    color: var(--ion-color-primary);
+  }
+  
