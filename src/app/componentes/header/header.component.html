@@ -1,7 +1,13 @@
-<ion-header >
-  <ion-toolbar >
-    <ion-back-button slot="start" defaultHref="/" color="primary"></ion-back-button>
-      <ion-title>{{titulo}}</ion-title>
+<ion-header>
+  <ion-toolbar>
+    
+    <!-- El título -->
+    <ion-title>{{titulo}}</ion-title>
+    
+    <ion-back-button slot="start" defaultHref="/" *ngIf="titulo !== 'Inicio'" color="primary"></ion-back-button>
+    <ion-buttons slot="end">
+      <img src="../../../assets/icon/logo1.png" alt="Logo" style="height: 30px; width: auto; margin-right: 8px;">
+      <ion-title>AMPHARA</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-

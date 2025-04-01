@@ -9,7 +9,9 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 export class HeaderComponent  implements OnInit {
   // Input sirve para recibir 
   @Input() titulo: string='';
-  constructor() { }
+  constructor() {
+    
+  }
 
   
 

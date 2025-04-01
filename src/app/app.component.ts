@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ConsultasService } from './services/consultas.service';
 import { Platform } from '@ionic/angular';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -10,11 +11,17 @@ import { Platform } from '@ionic/angular';
   standalone: false,
 })
 export class AppComponent {
+  titulo: string = 'Inicio';
 
 
-  constructor(private firebaseService: ConsultasService,private platform: Platform) {
+  constructor(private firebaseService: ConsultasService,private platform: Platform,private router: Router) {
     this.initializeApp();// Llamamos a la función que inicializa la app y establece el modo oscuro posteriormente
 
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.actualizarTitulo(event.urlAfterRedirects);
+      }
+    });
    }
   initializeApp() {
     this.platform.ready().then(() => {
@@ -27,10 +34,21 @@ export class AppComponent {
     document.body.classList.add('dark');// Añadimos la clase dark al body para que se muestre la app en modo oscuro con los estilos css global
   }
 
+  actualizarTitulo(url: string) {
+    // Definir títulos según la ruta
+    const titulos: { [key: string]: string } = {
+      '/principal': 'Inicio',
+      '/galeria': 'Galeria',
+      '/historia': 'Historia',
+      '/personajes':'Personajes',
+      '/colaboradores':'Colaboradores'
+    };
+
+
+    this.titulo = titulos[url] || 'Página Desconocida';
+  }
+
   ngOnInit() {
-    // Llamamos al servicio para obtener los datos de Firestore
-/*     this.firebaseService.getDatos().subscribe(respuesta => {
-      console.log('Datos de Firestore:', respuesta);  // Aquí imprimimos los datos en la consola
-    }); */
+   
   }
 }

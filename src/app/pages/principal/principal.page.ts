@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { IonButton, IonContent, IonicModule, IonIcon } from '@ionic/angular';
-import { info } from 'src/app/interfaces/interfaces';
+import { info, reseñas } from 'src/app/interfaces/interfaces';
 import { ConsultasService } from 'src/app/services/consultas.service';
 @Component({
   standalone:false,
@@ -14,22 +14,23 @@ export class PrincipalPage implements OnInit {
 
   @ViewChild(IonContent) content!: IonContent;
 
-  //historias: info[] = [];
+    resena: reseñas[] = [];  // Arreglo para almacenar los escenarios obtenidos de la base de datos */
 
 
-  constructor(/*private firebaseService: ConsultasService*/) { }
+  constructor(private firebaseService: ConsultasService,private cdr: ChangeDetectorRef) { } 
 
   ngOnInit() {
   
-    // this.firebaseService.getDatos().subscribe({
-    //   next: (data) => {
-    //     console.log('Datos recibidos:', data);
-    //     this.historias = data;
-    //   },
-    //   error: (err) => {
-    //     console.error('Error obteniendo datos:', err);
-    //   }
-    // });
+    this.firebaseService.getDatosReseñas().subscribe({
+      next: (data) => {
+        console.log('Datos recibidos:', data);
+        this.resena = data;
+        this.cdr.detectChanges();//detecta los cambios en la vista y los aplica en tiempo real
+      },
+      error: (err) => {
+        console.error('Error obteniendo datos:', err);
+      }
+    });
   }
 
 }

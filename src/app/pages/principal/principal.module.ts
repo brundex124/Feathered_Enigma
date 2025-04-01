@@ -16,6 +16,7 @@ import { PrincipalPage } from './principal.page';
     IonicModule,
     PrincipalPageRoutingModule,
     ComponentesModule,
+    IonicModule
   ],
   declarations: [PrincipalPage]
 })

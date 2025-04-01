@@ -2,16 +2,13 @@
     <h1>.....................</h1>
 
     <!--Card con imagen y titulo donde solicita la direccion de la imagen desde la collecion -->
-    <ion-card *ngFor="let i of escenarios">
-        <img [src]="i.foto" />
+    <ion-card class="card-animate card_imagen" *ngFor="let i of escenarios">
         <ion-card-header>
-            <ion-card-title class="text">{{i.Nombre}}</ion-card-title>
-            <ion-card-subtitle class="text">Nivel: {{i.Escenario}}</ion-card-subtitle>
+            <ion-card-title class="titulo">{{i.Nombre}}</ion-card-title>
+            <ion-card-subtitle style="color: rgb(176, 176, 176);">Nivel: {{i.Escenario}}</ion-card-subtitle>
         </ion-card-header>
+        <img class="imagen" [src]="i.foto" />
 
-        <!-- <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content> -->
     </ion-card>
   
   

@@ -1,23 +1,91 @@
-<ion-content class="ion-padding custom-background">
+<ion-content class="ion-padding custom-background card-animate">
   <div class="content-wrapper">
-    <ion-img src="../../../assets/img/txt_logo.png" alt="Logo" class="logo"></ion-img>
 
-    
-    <p class="text">
-      La verdad se oculta en la oscuridad.
-      <br><br>
-      Despiertas entre las sombras y el horror:
+    <p class="fuente_titulo"><!--Logo principal del Juego-->
+      <span class="fuente_titulo_primero">Feathered</span>
       <br>
-      <strong>¡Tu familia ha sido asesinada!</strong>
-      <br><br>
-      Solo queda una pista: <br>¡Tu padre ha desaparecido!
-      <br><br>
-      Con sed de venganza, te embarcas en un viaje para encontrarlo y
-      descubrir la verdad. Pero en <strong>Feathered Enigma</strong>, nada es lo que parece.
+      <span class="fuente_titulo_segundo">Enigma</span>
     </p>
+
+    <p class="text">¿ESTAS LISTO PARA ENFRENTAR AL VERDADERO CULPABLE?</p>
+
+    <img src="../../../assets/img/dude.png" style="width: 75%;">
+ 
   </div>
 
- 
+  <hr style="border: 1px solid #fff; margin: 10px 0;"><!--SEPARDOR DE LOGO-->
+  
+  <div >
+    <p>Reseñas: </p>
+    <ion-card *ngFor="let r of resena">
+      <ion-card-header>
+        <ion-card-title>{{ r.usuario }}</ion-card-title>
+        <ion-card-subtitle>
+          <ion-icon class="icono" *ngFor="let star of [1,2,3,4,5]" 
+           name="{{ star <= r.puntuacion ? 'star' : 'star-outline' }}">        
+          </ion-icon>
+        </ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-content>
+        {{ r.comentario }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <hr style="border: 1px solid #fff; margin: 10px 0;"><!--SEPARDOR ANTES DEL FOOTER-->
+
+  <ion-footer class="footer-container">
+    
+    <ion-toolbar class="footer-toolbar">
+      <ion-grid>
+        <ion-row>
+          <!-- Información del Juego -->
+          <ion-col size="12" class="footer-section">
+            <h3><ion-icon name="game-controller" ></ion-icon>
+              Sobre el Juego</h3>
+            <p>Disfruta de una experiencia única con desafíos y diversión para todas las edades. Conéctate y juega localmente con tus amigos.</p>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <!-- Restricciones -->
+          <ion-col size="12" class="footer-section">
+            <h3><ion-icon name="warning" ></ion-icon> Restricciones</h3>
+            <p>Recomendado para mayores de 10 años. Aplican términos y condiciones.</p>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row class="social-row">
+          <!-- Redes Sociales -->
+          <ion-col size="12" class="footer-section social-icons">
+            <h3><ion-icon name="people"></ion-icon> Síguenos en Redes</h3>
+            <a href="https://www.facebook.com" target="_blank" style="color: yellow;">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" style="color: yellow;">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" style="color: yellow;">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" style="color: yellow;">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <!-- Derechos reservados -->
+          <ion-col size="12" class="footer-section">
+            <p>&copy; 2025 <strong>Feathered Enigma</strong>. Todos los derechos reservados.</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
+  
+  
 </ion-content>
 
 
