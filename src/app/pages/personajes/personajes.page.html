@@ -21,21 +21,25 @@
     </ion-grid>
   </ion-grid>
 
-  <hr style="border: 1px solid #fff; margin: 10px 0;"><!--SEPARDOR ANTES DEL FOOTER-->
 <p style="color: #fff;">Controles:</p>
 
-  <ion-card-content>
-    <ion-card class="personaje-item card-animate" *ngFor="let i of controles" >
-      <div class="personaje-contenedor">
-        <ion-thumbnail class="personaje-thumbnail">
-          <img class="img_personajes" [src]="i.foto"/>
-        </ion-thumbnail>
-        <ion-label>
-          <h2 class="nombre-personaje">{{ i.boton }}</h2>
-          <h4 class="descripcion-personaje">{{ i.accion }}</h4>
-        </ion-label>
-      </div>
-    </ion-card>
-  </ion-card-content>
+
+  <ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let p of controles" >
+          <ion-card>
+            <img [src]="p.foto" alt="Foto de {{p.boton}}" class="colaborador-img">
+            <ion-card-header>
+              <ion-card-title style="color: #fff;">{{ p.boton }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{ p.accion }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
 
 </ion-content>
