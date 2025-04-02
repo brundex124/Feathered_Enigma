@@ -3,16 +3,15 @@
 
     <!--Card con imagen y titulo donde solicita la direccion de la imagen desde la collecion -->
     <ion-card class="card-animate card_imagen" *ngFor="let i of escenarios">
+        
+        <img class="imagen" [src]="i.foto" />
         <ion-card-header>
             <ion-card-title class="titulo">{{i.Nombre}}</ion-card-title>
-            <ion-card-subtitle style="color: rgb(176, 176, 176);">Nivel: {{i.Escenario}}</ion-card-subtitle>
+            <ion-card-subtitle style="color: rgb(176, 176, 176); text-align: justify;">Nivel {{i.Escenario}}</ion-card-subtitle>
         </ion-card-header>
-        <img class="imagen" [src]="i.foto" />
 
     </ion-card>
   
-  
-
 </ion-content>
 
 
