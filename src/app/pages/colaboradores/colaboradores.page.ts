@@ -12,15 +12,15 @@ export class ColaboradoresPage implements OnInit {
     {
       foto: "../../../assets/img/woman.png",
       nombre: "Alejo Pineada Abigail ",
-      rol: "Scrum Master"
+      rol: "Diseñadora"
     },{
       foto: "../../../assets/img/man.png",
       nombre: "Pablo Ivan Alcantar Tamayo",
-      rol: "Supervisor"
+      rol: "Desarollador"
     },{
       foto:"../../../assets/img/man.png",
       nombre:"Martin Ulises Gómez Castro",
-      rol:"Supervisor"
+      rol:"Tester"
     }
   ]
   constructor() { }

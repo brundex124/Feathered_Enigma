@@ -13,7 +13,7 @@ import { DetalleComponent } from 'src/app/componentes/detalle/detalle.component'
 export class PersonajesPage implements OnInit {
     personajes: personajes[] = [];  // Arreglo para almacenar los escenarios obtenidos de la base de datos */
     controles=[]=[{
-      boton:"Barra Espaciadora",
+      boton:"Barra Espacio",
       accion:"Saltar",
       foto:"../../../assets/img/tecla_barra.png"
       },{
