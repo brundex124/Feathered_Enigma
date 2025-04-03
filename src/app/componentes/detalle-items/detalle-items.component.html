@@ -1,12 +1,12 @@
 <ion-content class="custom-background">
 
   <div class="titulo-contenedor">
-    <h1 class="titulo">{{ detallePersonaje.Nombre }}</h1>
+    <h1 class="titulo">{{ detalleItems.nombre }}</h1>
   </div>
 
   <!-- Imagen del personaje -->
   <div class="imagen-contenedor">
-    <img class="imagen" *ngIf="detallePersonaje.Foto" [src]="detallePersonaje.Foto" alt="Imagen del personaje">
+    <img class="imagen" *ngIf="detalleItems.foto" [src]="detalleItems.foto" alt="Imagen del personaje">
   </div>
 
   <!-- Ficha de detalles -->
@@ -17,24 +17,24 @@
     <ion-card-content>
       <ion-item>
         <ion-label><strong>Rol:</strong></ion-label>
-        <ion-note slot="end" color="danger">{{ detallePersonaje.Personaje }}</ion-note>
+        <ion-note slot="end" color="danger" style="  font-size: 20px; font-weight: bold;">{{ detalleItems.accion }}</ion-note>
       </ion-item>
 
-      <ion-item >
+      <!--<ion-item>
         <div class="vidas">
-          <ion-label ><strong>{{(detallePersonaje.Nombre === 'Milos' || detallePersonaje.Nombre ==='Umbra')  ? "Vida":"Daño"}}</strong></ion-label>
-          <ng-container *ngIf="detallePersonaje.Vida > 0 ">
-            <img *ngFor="let _ of [].constructor(detallePersonaje.Vida); let i = index" 
-                 [src]="detallePersonaje.Foto_vida" 
+          <ion-label><strong>Vida:</strong></ion-label>
+          <ng-container *ngIf="detalleItems.Vida > 0 && detalleItems.Personaje === 'Milos'">
+            <img *ngFor="let _ of [].constructor(detalleItems.Vida); let i = index" 
+                 src="../../../assets/img/corazon.png" 
                  class="corazon">
           </ng-container>
           
         </div> 
-      </ion-item>
+      </ion-item>-->
 
       <ion-item>
         <ion-label><strong>Descripcion:</strong></ion-label>
-        <ion-note slot="end" color="secondary" style="color: #fff;">{{ detallePersonaje.Descripcion }}</ion-note>
+        <ion-note slot="end" style="color: #fff;">{{ detalleItems.descripcion }}</ion-note>
       </ion-item>
       
     </ion-card-content>

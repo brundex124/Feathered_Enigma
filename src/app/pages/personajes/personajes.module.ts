@@ -12,8 +12,8 @@ import { PersonajesPage } from './personajes.page';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    PersonajesPageRoutingModule
+    IonicModule.forRoot(),
+    PersonajesPageRoutingModule,
   ],
   declarations: [PersonajesPage]
 })

@@ -202,3 +202,12 @@ ion-tab-bar {
   --color: #b9b1b1;
   /* Color de texto para las pestañas no seleccionadas */
 }
+
+.button_resena {//Para bottones de accion de reseñas
+  --border-color: yellow; /* Borde amarillo */
+  --border-width: 1px;
+  --color: white; /* Texto blanco */
+  --background: transparent; /* Fondo transparente */
+  border: 1px solid yellow; /* Asegura el borde */
+  font-weight: bold;
+}

@@ -37,11 +37,13 @@ export class AppComponent {
   actualizarTitulo(url: string) {
     // Definir títulos según la ruta
     const titulos: { [key: string]: string } = {
-      '/principal': 'Inicio',
+      '/principal': 'Principal',
       '/galeria': 'Galeria',
       '/historia': 'Historia',
       '/personajes':'Personajes',
-      '/colaboradores':'Colaboradores'
+      '/colaboradores':'Colaboradores',
+      '/form-comentarios':'Escribir Reseña'
+      
     };
 
 

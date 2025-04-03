@@ -16,6 +16,11 @@
   
   <div >
     <p>Reseñas: </p>
+
+    <ion-button expand="full" fill="clear" class="button_resena" href="/form-comentarios">
+      Escribir reseña
+    </ion-button>
+
     <ion-card *ngFor="let r of resena">
       <ion-card-header>
         <ion-card-title>{{ r.usuario }}</ion-card-title>

@@ -5,9 +5,10 @@ import { IonicModule } from '@ionic/angular';
 import { Icon } from 'ionicons/dist/types/components/icon/icon';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { DetalleItemsComponent } from './detalle-items/detalle-items.component';
 
 @NgModule({
-  declarations: [HeaderComponent,NavBarComponent,DetalleComponent],
+  declarations: [HeaderComponent,NavBarComponent,DetalleComponent,DetalleItemsComponent],
   exports:[HeaderComponent,NavBarComponent,DetalleComponent],
   imports: [
     IonicModule,
