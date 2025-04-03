@@ -41,7 +41,9 @@ export class AppComponent {
       '/galeria': 'Galeria',
       '/historia': 'Historia',
       '/personajes':'Personajes',
-      '/colaboradores':'Colaboradores'
+      '/colaboradores':'Colaboradores',
+      '/form-comentarios':'Escribir Reseña'
+      
     };
 
 

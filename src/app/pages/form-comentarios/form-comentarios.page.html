@@ -1,0 +1,57 @@
+
+
+<ion-content [fullscreen]="true" class="ion-padding custom-background card-animate">
+  <h1>.</h1>
+  <form (ngSubmit)="guardarFormulario()">
+  <ion-input
+  class="warning"
+  fill="solid"
+  label="Nombre de Usuario"
+  labelPlacement="floating"
+  helperText="Escriba un nombre de usuario"
+  errorText="Usuario Inválido"
+  [(ngModel)]="formulario.usuario" name="nombre" required
+  ></ion-input>
+
+  <ion-input
+  class="warning"
+  fill="solid"
+  label="Calificacion del 1 al 5"
+  type="number"
+  max="5"
+  min="1"
+  labelPlacement="floating"
+  helperText="Escriba una calificacion"
+  errorText="Calificacion Inválida"
+  [(ngModel)]="formulario.puntuacion"
+  name="puntuacion" required></ion-input>
+
+  <ion-textarea
+  type="text"
+  fill="solid"
+  label="Comentario"
+  labelPlacement="floating"
+  helperText="Escriba un comentario"
+  errorText="Comentario Invalido"
+  [(ngModel)]="formulario.comentario"
+  name="comentario" 
+  required></ion-textarea>
+
+  <ion-button type="submit" expand="full" fill="clear" class="button_resena" href="/form-comentarios" >
+    Enviar Reseña
+  </ion-button>
+
+
+  <div class="content-wrapper">
+
+    <p class="fuente_titulo"><!--Logo principal del Juego-->
+      <span class="fuente_titulo_primero">Feathered</span>
+      <br>
+      <span class="fuente_titulo_segundo">Enigma</span>
+    </p>
+ 
+  </div>
+
+</form>
+
+</ion-content>

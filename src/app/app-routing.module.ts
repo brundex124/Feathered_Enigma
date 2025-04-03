@@ -27,7 +27,11 @@ const routes: Routes = [
   {
     path: 'colaboradores',
     loadChildren: () => import('./pages/colaboradores/colaboradores.module').then( m => m.ColaboradoresPageModule)
+  },  {
+    path: 'form-comentarios',
+    loadChildren: () => import('./pages/form-comentarios/form-comentarios.module').then( m => m.FormComentariosPageModule)
   },
+
 ];
 
 @NgModule({

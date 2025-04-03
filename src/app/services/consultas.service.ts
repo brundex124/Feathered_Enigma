@@ -53,7 +53,7 @@ export class ConsultasService {
 
 
   // Métodos que retorna los datos de la colección de Firestore segun la coleccion solicitada.
-  
+
   getDatosHistoria(): Observable<info[]> {
     return this.datosHistoria;
   }
@@ -72,7 +72,7 @@ export class ConsultasService {
   getDatosItems(): Observable<items[]> {
     return this.datosItems;
   }
-  
+
   getDatosReseñas(): Observable<reseñas[]> {
     return this.datosReseñas;
   }
@@ -96,6 +96,20 @@ export class ConsultasService {
   }
 
 
-
+  /**Almacenr info de fromulario a firebase */
+  async guardarDatos(datos: { usuario: string, puntuacion: number, comentario: string }) {
+    try {
+      // Agrega el documento en la colección de reseñas
+      const docRef = await this.collectionReseñas.add({
+        comentario: datos.comentario,
+        usuario: datos.usuario,
+        puntuacion: datos.puntuacion
+        
+      });
+      console.log('Reseña guardada con ID:', docRef.id);
+    } catch (error) {
+      console.error('Error al guardar reseña:', error);
+    }
+  }
 
 }
