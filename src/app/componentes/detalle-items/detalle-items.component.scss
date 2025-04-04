@@ -1,5 +1,21 @@
-/* styles.css */
-
+ion-note,on-label{
+  font-size: 1.2em;
+}
+ion-card-subtitle{
+  font-size: 1.2em;
+}
+.imagen {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.titulo{
+  color: gold;
+  font-weight: bold; /* Aplica negrita */
+}
+.negrita{
+  font-weight: bold; /* Aplica negrita */
+}
   
 ion-content {
     background-color: var(--ion-background-color);

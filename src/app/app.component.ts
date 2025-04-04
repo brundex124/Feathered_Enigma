@@ -40,7 +40,7 @@ export class AppComponent {
       '/principal': 'Principal',
       '/galeria': 'Galeria',
       '/historia': 'Historia',
-      '/personajes':'Personajes',
+      '/personajes':'Mecanicas',
       '/colaboradores':'Colaboradores',
       '/form-comentarios':'Escribir Reseña'
       

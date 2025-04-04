@@ -12,21 +12,26 @@
   <!-- Ficha de detalles -->
   <ion-card class="detalle-card">
     <ion-card-header>
-      <ion-card-subtitle>Información General</ion-card-subtitle>
+      <ion-card-subtitle >Información General</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
         <ion-label><strong>Rol:</strong></ion-label>
-        <ion-note slot="end" color="danger">{{ detallePersonaje.Personaje }}</ion-note>
+        <ion-note slot="end" color="danger"  class="negrita">{{ detallePersonaje.Personaje }}</ion-note>
       </ion-item>
 
-      <ion-item >
-        <div class="vidas">
-          <ion-label ><strong>{{(detallePersonaje.Nombre === 'Milos' || detallePersonaje.Nombre ==='Umbra')  ? "Vida":"Daño"}}</strong></ion-label>
-          <ng-container *ngIf="detallePersonaje.Vida > 0 ">
+      <ion-item *ngIf="detallePersonaje.Vida > 0 ">
+        <div class="vidas" >
+          <ion-label ><strong>{{detallePersonaje.Nombre === 'Milos'  ? "Vida":"Daño"}}</strong></ion-label>
+          
+          <ng-container *ngIf="detallePersonaje.Nombre === 'Milos' ">
             <img *ngFor="let _ of [].constructor(detallePersonaje.Vida); let i = index" 
                  [src]="detallePersonaje.Foto_vida" 
                  class="corazon">
+          </ng-container>
+
+          <ng-container *ngIf="detallePersonaje.Nombre !== 'Milos' ">
+            <ion-label color="danger" style="font-size: 1.3em;"><strong>{{detallePersonaje.Vida}} De vida</strong></ion-label>
           </ng-container>
           
         </div> 

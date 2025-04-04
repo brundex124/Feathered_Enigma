@@ -21,7 +21,8 @@ export class GaleriaPage implements OnInit {
     this.firebaseService.getDatosEscenarios().subscribe({
       next: (data) => {
         console.log('Datos recibidos:', data);
-        this.escenarios = data;
+      // Ord  enar los datos por el campo "Nivel" de forma ascendente
+        this.escenarios = data.sort((a, b) => a.Escenario - b.Escenario);
         this.cdr.detectChanges();// Fuerza la detección de cambios para asegurar que la vista se actualice una vez que se obtienen una respues.
       },
       error: (err) => {

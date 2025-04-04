@@ -38,8 +38,8 @@ export class NavBarComponent  implements OnInit {
 
     },
     {
-      icono: 'logo-octocat',
-      nombre: 'Personajes',
+      icono: 'game-controller',
+      nombre: 'Mecanicas',
       ruta:'/personajes',
       tab:'personajes'
 
