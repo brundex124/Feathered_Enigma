@@ -16,21 +16,10 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-label><strong>Rol:</strong></ion-label>
-        <ion-note slot="end" color="danger" style="  font-size: 20px; font-weight: bold;">{{ detalleItems.accion }}</ion-note>
+        <ion-label><strong>Elemento:</strong></ion-label>
+        <ion-note slot="end" color="danger" class="negrita" >{{ detalleItems.accion }}</ion-note>
       </ion-item>
 
-      <!--<ion-item>
-        <div class="vidas">
-          <ion-label><strong>Vida:</strong></ion-label>
-          <ng-container *ngIf="detalleItems.Vida > 0 && detalleItems.Personaje === 'Milos'">
-            <img *ngFor="let _ of [].constructor(detalleItems.Vida); let i = index" 
-                 src="../../../assets/img/corazon.png" 
-                 class="corazon">
-          </ng-container>
-          
-        </div> 
-      </ion-item>-->
 
       <ion-item>
         <ion-label><strong>Descripcion:</strong></ion-label>

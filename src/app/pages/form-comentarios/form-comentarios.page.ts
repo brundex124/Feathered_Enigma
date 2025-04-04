@@ -30,7 +30,7 @@ export class FormComentariosPage implements OnInit {
     const toast = await this.toastController.create({
       message: mensaje,
       duration: 2000,
-      position: 'top',
+      position: 'bottom',
       color: color
     });
     await toast.present();

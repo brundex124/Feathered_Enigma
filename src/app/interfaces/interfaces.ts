@@ -6,6 +6,7 @@ export interface info{
 export interface escenarios{ 
     Escenario:number;
     Nombre:string;
+    Descripcion:string;
     foto:string;
 }
 
